@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <target name="-pre-build">
+        <!-- Update versions from package.json -->
+        <replaceregexp file="AndroidManifest.xml" match='android:versionCode="(.*)"'
+            replace='android:versionCode="${env.npm_package_versionCode}"'/>
+        <replaceregexp file="AndroidManifest.xml" match='android:versionName="(.*)"'
+            replace='android:versionName="${env.npm_package_version}"'/>
+    </target>
+</project>
